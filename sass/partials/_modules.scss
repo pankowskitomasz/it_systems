@@ -19,6 +19,15 @@
         @extend %bg-tmp;
     }
 }
+.contact{
+    &-data{
+        @include background-blend($bg__blend--multiply, $color__bg-1);
+        @include set-background($bg__contact-data,0,"center","cover","scroll");
+    }
+    &-form{
+        @include set-background($bg__contact-data,0,"center","cover","scroll");
+    }
+}
 .decoration{
     &-none{
         text-decoration: none !important;
@@ -29,6 +38,11 @@
         @extend %bg-tmp;
     }
 }
+.fit{
+    &-cover{
+        object-fit: cover;
+    }
+}
 .font{
     &-logo{
         @include set-font-params($font-logo__family,$font-logo__size);
@@ -37,12 +51,56 @@
         @include set-font-params($font-main__family,$font-main__size);
     }
 }
+.h{
+    &-25vh{
+        height:25vh;
+    }
+    &-35vh{
+        height:35vh;
+    }
+    &-50vh{
+        height:50vh;
+    }
+    &-100vh{
+        height:100vh;
+    }
+}
+.hover{
+    &-orange:hover{
+        & .card-footer{
+            background-color: $color__orange;
+            color: $color__white !important;
+        }
+        & .card{
+            border: 1px solid $color__orange !important;
+        }
+    }
+}
+.icon{
+    &-big{
+        font-size: $icon-big__size !important;
+    }
+}
 .minh{
+    &-25vh{
+        min-height: 25vh;
+    }
     &-50vh{
         min-height: 50vh;
     }
+    &-75vh{
+        min-height: 75vh;
+    }
     &-100vh{
         min-height: 100vh;
+    }
+}
+.opacity{
+    &-7{
+        opacity: 0.7;
+    }
+    &-8{
+        opacity: 0.8;
     }
 }
 .p{
@@ -59,8 +117,50 @@
         @extend %bg-tmp;
     }
 }
+.services{
+    &-top{
+        @include set-background($bg__services-top-img,0,"center","cover","scroll"); 
+    }
+}
+.stats{
+    &-info{
+        @include background-blend($bg__blend--multiply, $color__bg-1);
+        @include set-background($bg__stats-img,0,"center","cover","scroll");
+    }
+}
 .text{
+    &-decoration{
+        &-none{
+            &:hover{
+                text-decoration:none!important;    
+            }
+            text-decoration:none!important;
+        }
+    }
+    &-orange{
+        color: $color__orange !important;
+    }
     &-shadow{
         text-shadow: $text__shadow;
+    }
+}
+.z{
+    &-100{
+        z-index: 100;
+    }
+}
+
+textarea{
+    resize: none;
+}
+
+@media all and (max-width: 767px){
+    .navbar{
+        &-collapse{
+            &.show{
+                backdrop-filter: $navbar-collapse__backdrop;
+                z-index: $navbar-collapse__zindex;
+            }
+        }
     }
 }

@@ -71,42 +71,165 @@ section {
 }
 
 /* line 23, ../../sass/partials/_modules.scss */
+.contact-data {
+  background-blend-mode: multiply;
+  background-color: #333;
+  background-attachment: scroll;
+  background-image: url(../img/contact/bg-contact.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 27, ../../sass/partials/_modules.scss */
+.contact-form {
+  background-attachment: scroll;
+  background-image: url(../img/contact/bg-contact.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 32, ../../sass/partials/_modules.scss */
 .decoration-none {
   text-decoration: none !important;
 }
 
-/* line 33, ../../sass/partials/_modules.scss */
+/* line 42, ../../sass/partials/_modules.scss */
+.fit-cover {
+  object-fit: cover;
+}
+
+/* line 47, ../../sass/partials/_modules.scss */
 .font-logo {
   font-family: "Arial";
   font-size: 24px;
 }
-/* line 36, ../../sass/partials/_modules.scss */
+/* line 50, ../../sass/partials/_modules.scss */
 .font-menu {
   font-family: "Arial";
   font-size: 16px;
 }
 
-/* line 41, ../../sass/partials/_modules.scss */
+/* line 55, ../../sass/partials/_modules.scss */
+.h-25vh {
+  height: 25vh;
+}
+/* line 58, ../../sass/partials/_modules.scss */
+.h-35vh {
+  height: 35vh;
+}
+/* line 61, ../../sass/partials/_modules.scss */
+.h-50vh {
+  height: 50vh;
+}
+/* line 64, ../../sass/partials/_modules.scss */
+.h-100vh {
+  height: 100vh;
+}
+
+/* line 70, ../../sass/partials/_modules.scss */
+.hover-orange:hover .card-footer {
+  background-color: #FF8B01;
+  color: #fff !important;
+}
+/* line 74, ../../sass/partials/_modules.scss */
+.hover-orange:hover .card {
+  border: 1px solid #FF8B01 !important;
+}
+
+/* line 80, ../../sass/partials/_modules.scss */
+.icon-big {
+  font-size: 75px !important;
+}
+
+/* line 85, ../../sass/partials/_modules.scss */
+.minh-25vh {
+  min-height: 25vh;
+}
+/* line 88, ../../sass/partials/_modules.scss */
 .minh-50vh {
   min-height: 50vh;
 }
-/* line 44, ../../sass/partials/_modules.scss */
+/* line 91, ../../sass/partials/_modules.scss */
+.minh-75vh {
+  min-height: 75vh;
+}
+/* line 94, ../../sass/partials/_modules.scss */
 .minh-100vh {
   min-height: 100vh;
 }
 
-/* line 49, ../../sass/partials/_modules.scss */
-.p-header {
-  padding-top: 60px;
+/* line 99, ../../sass/partials/_modules.scss */
+.opacity-7 {
+  opacity: 0.7;
+}
+/* line 102, ../../sass/partials/_modules.scss */
+.opacity-8 {
+  opacity: 0.8;
 }
 
-/* line 54, ../../sass/partials/_modules.scss */
+/* line 107, ../../sass/partials/_modules.scss */
+.p-header {
+  padding-top: 75px;
+}
+
+/* line 112, ../../sass/partials/_modules.scss */
 .privacy-container {
   background-color: #fff !important;
   opacity: 0.8;
 }
 
-/* line 63, ../../sass/partials/_modules.scss */
+/* line 121, ../../sass/partials/_modules.scss */
+.services-top {
+  background-attachment: scroll;
+  background-image: url(../img/services/bg-top.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 126, ../../sass/partials/_modules.scss */
+.stats-info {
+  background-blend-mode: multiply;
+  background-color: #333;
+  background-attachment: scroll;
+  background-image: url(../img/about/bg-stats-info.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 133, ../../sass/partials/_modules.scss */
+.text-decoration-none {
+  text-decoration: none !important;
+}
+/* line 134, ../../sass/partials/_modules.scss */
+.text-decoration-none:hover {
+  text-decoration: none !important;
+}
+/* line 140, ../../sass/partials/_modules.scss */
+.text-orange {
+  color: #FF8B01 !important;
+}
+/* line 143, ../../sass/partials/_modules.scss */
 .text-shadow {
   text-shadow: 1px 1px 4px #000;
+}
+
+/* line 148, ../../sass/partials/_modules.scss */
+.z-100 {
+  z-index: 100;
+}
+
+/* line 153, ../../sass/partials/_modules.scss */
+textarea {
+  resize: none;
+}
+
+@media all and (max-width: 767px) {
+  /* line 160, ../../sass/partials/_modules.scss */
+  .navbar-collapse.show {
+    backdrop-filter: blur(20px);
+    z-index: 100;
+  }
 }
