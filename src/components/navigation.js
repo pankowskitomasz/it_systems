@@ -5,22 +5,25 @@ import Navbar from "../../node_modules/react-bootstrap/Navbar";
 
 class Navigation extends Component{
     render(){
+        let menuContent = this.props.menuItems.filter((item)=>item.navItem).map((item,idx)=>{
+            return <Nav.Item key={idx}>
+                <Link to={item.path} className="nav-link">
+                    {item.name}
+                </Link>
+            </Nav.Item>;
+        });
         return(
-            <Navbar bg="dark" variant="dark" expand="md" className="bg-transparent position-absolute w-100" collapseOnSelect>
+            <Navbar bg="light" variant="light" expand="md" className="position-absolute w-100 z-100 shadow border-bottom" collapseOnSelect>
                 <Navbar.Brand>
-                    <Link to="/" className="text-white font-weight-bold font-logo decoration-none">
+                    <Link to="/" className="font-weight-bold font-logo decoration-none text-orange">
                         <img src="/img/navbar_logo.png" alt="logo" className="mr-2"/>
                         IT Systems
                     </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse>
-                    <Nav className="ml-auto text-right font-weight-bold">
-                        <Nav.Item>
-                            <Link to="/" className="nav-link text-light">
-                                Home
-                            </Link>
-                        </Nav.Item>
+                    <Nav className="ml-auto text-right px-3">
+                        {menuContent}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
