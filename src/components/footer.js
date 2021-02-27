@@ -12,7 +12,7 @@ class Footer extends Component{
                     <Row className="mx-auto text-center d-flex w-100">
                         <Col xs={10} className="mx-auto text-shadow">
                             <small className="my-0 text-white">
-                                Copyright &copy; 2020 Tomasz Pankowski. All rights reserved.
+                                Copyright &copy; 2020-2021 Tomasz Pankowski. All rights reserved.
                                 <Link to={this.props.privacyLink.href} className="text-white">
                                     {this.props.privacyLink.name}
                                 </Link>

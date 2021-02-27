@@ -5,7 +5,6 @@ import Col from "../../node_modules/react-bootstrap/Col";
 import Button from "../../node_modules/react-bootstrap/Button";
 import Form from "../../node_modules/react-bootstrap/Form";
 import update from "react-addons-update";
-import {APP_LINKS} from "../config";
 
 class ContactForm extends Component {
     constructor() {
@@ -54,29 +53,6 @@ class ContactForm extends Component {
         }
     }
 
-    getCookie(cname) {
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for(var i = 0; i <ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0) === ' ') {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) === 0) {
-            return c.substring(name.length, c.length);
-          }
-        }
-        return "";
-      }
-
-    setCookie(cname, cvalue, exh) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exh*60*60*1000));
-        var expires = "expires="+ d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-
     sendForm(){
         if(this.state.formData.firstName.length!==0
         && this.state.formData.lastName.length!==0
@@ -85,43 +61,19 @@ class ContactForm extends Component {
         && this.state.formData.messageText.length!==0){
             let formData = new FormData();
             formData.append("fname",this.state.formData.firstName);
-            formData.append("flast",this.state.formData.lastName);
+            formData.append("lname",this.state.formData.lastName);
             formData.append("fmail",this.state.formData.emailAddress);
             formData.append("fphone",this.state.formData.phoneNumber);
             formData.append("fmsg",this.state.formData.messageText);
-            let msgcnt = this.getCookie("msgcount");
-            msgcnt = (msgcnt==="")?0:msgcnt;
-            formData.append("msgcount",msgcnt);
-            fetch(APP_LINKS.messages,{
+            fetch("message.php",{
                 method:"POST",
                 body:formData
             })
             .then((response)=>response.json())
-            .then((data)=>{
-                if(data["msgcount"]!==undefined
-                && !isNaN(data["msgcount"])){                    
-                    this.setCookie("msgcount",data.msgcount,2);
-                    this.props.backNav("confirm");
-                }
-            })
-            .catch((error)=>{
-                this.props.backNav("error");
-            });  
-            this.clearForm();
+            .then((data)=>console.log(data))
+            .catch((error)=>console.log("Message not send"));  
         }
     }
-
-    clearForm(){
-        let clearData = update(this.state.formData,{
-            emailAddress: {$set: ""},
-            firstName: {$set:""},
-            lastName: {$set:""},
-            messageText: {$set:""},
-            phoneNumber: {$set:""}
-        });
-        this.setState({ formData: clearData });        
-    }
-
     render() {
         return (
             <Container fluid className={"contact-form align-items-center p-0 py-5 bg-white d-flex minh-50vh " + this.props.classExt}>
@@ -143,7 +95,6 @@ class ContactForm extends Component {
                                     maxLength="50"
                                     name="firstName"
                                     onChange={this.updateFormData.bind(this)} 
-                                    value={this.state.formData.firstName}
                                     required/>
                             </Form.Group>
                             <Form.Group controlId="formLastName">
@@ -154,7 +105,6 @@ class ContactForm extends Component {
                                     maxLength="50"
                                     name="lastName"
                                     onChange={this.updateFormData.bind(this)} 
-                                    value={this.state.formData.lastName}
                                     required/>
                             </Form.Group>
                             <Form.Group controlId="formEmail">
@@ -165,7 +115,6 @@ class ContactForm extends Component {
                                     maxLength="50"
                                     name="emailAddress"
                                     onChange={this.updateFormData.bind(this)} 
-                                    value={this.state.formData.emailAddress}
                                     required/>
                             </Form.Group>
                             <Form.Group controlId="formPhone">
@@ -176,7 +125,6 @@ class ContactForm extends Component {
                                     maxLength="15"
                                     name="phoneNumber"
                                     onChange={this.updateFormData.bind(this)} 
-                                    value={this.state.formData.phoneNumber}
                                     required/>
                             </Form.Group>
                             <Form.Group controlId="formMessage">
@@ -186,7 +134,6 @@ class ContactForm extends Component {
                                     maxLength="250"
                                     name="messageText"
                                     onChange={this.updateFormData.bind(this)} 
-                                    value={this.state.formData.messageText}
                                     required/>
                             </Form.Group>
                             <div className="w-100 text-center">
