@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
+import ScrollToTop from "./components/scroll-top";
 //---------------------------------------------------------
 //components
 import Navigation from "./components/navigation";
@@ -23,6 +24,7 @@ class App extends Component{
         });
         return(        
             <BrowserRouter>
+                <ScrollToTop />
                 <Navigation menuItems={this.state.routes}/>                 
                 <Switch>
                     {switchContent}

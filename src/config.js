@@ -21,13 +21,26 @@ const appCfg = {
         {navItem:false, exact:false, path:"*",name:"any",view:<Redirect to="/error"/>}
     ]
 };
+
 const homeCfg = [
     {navItem:true, exact:false, path:"/about",name:"About",view:<About/>},
     {navItem:true, exact:false, path:"/offer",name:"Offer",view:<Offer/>},
     {navItem:true, exact:false, path:"/contact",name:"Contact",view:<Contact/>}
 ];
 
+const msgCfg = {
+    pageSize: 10
+};
+
+const APP_LINKS = {
+    messages: "http://localhost/demo/it_systems/public/message.php",
+    users: "http://localhost/demo/it_systems/public/user.php"
+};
+
+
 export {
     appCfg,
-    homeCfg
+    homeCfg,
+    msgCfg,
+    APP_LINKS
 }
