@@ -9,10 +9,8 @@ class StatsInfo extends Component{
     render(){
         let linking;
         if(this.props.backLink!==undefined){
-            linking = <Link to={this.props.backLink.path}>
-                <Button variant="outline-warning" className="rounded-pill">
-                    {this.props.backLink.name}
-                </Button>
+            linking = <Link to={this.props.backLink.path} className="btn btn-outline-warning rounded-pill">
+                {this.props.backLink.name}
             </Link>;
         }
         return(        

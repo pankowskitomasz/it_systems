@@ -25,10 +25,8 @@ class IndexSlider extends Component{
                                         Our company provides wide range of sales and comapany management
                                         software including ERP software. Check our offer now!
                                     </p>
-                                    <Link to="/offer">
-                                        <Button variant="warning" className="rounded-pill">
-                                            See more
-                                        </Button>
+                                    <Link to="/offer" className="btn btn-warning rounded-pill">
+                                        See more
                                     </Link>
                                 </Carousel.Caption>
                             </Carousel.Item>
@@ -44,10 +42,8 @@ class IndexSlider extends Component{
                                         Our team includes specialists from sales and intergration
                                         areas. See more information about us.
                                     </p>
-                                    <Link to="/about">
-                                        <Button variant="warning" className="rounded-pill">
-                                            See more
-                                        </Button>
+                                    <Link to="/about" className="btn btn-warning rounded-pill">
+                                        See more
                                     </Link>
                                 </Carousel.Caption>
                             </Carousel.Item>
@@ -63,10 +59,8 @@ class IndexSlider extends Component{
                                         Our employees are for your disposal and answer all your questions.
                                         Contact us online, by phone or personally. 
                                     </p>
-                                    <Link to="/contact">
-                                        <Button variant="warning" className="rounded-pill">
-                                            See more
-                                        </Button>
+                                    <Link to="/contact" className="btn btn-warning rounded-pill">
+                                        See more
                                     </Link>
                                 </Carousel.Caption>
                             </Carousel.Item>
